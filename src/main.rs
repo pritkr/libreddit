@@ -25,50 +25,6 @@ mod server;
 
 // Create Services
 
-// Required for the manifest to be valid
-async fn pwa_logo() -> Result<Response<Body>, String> {
-	Ok(
-		Response::builder()
-			.status(200)
-			.header("content-type", "image/png")
-			.body(include_bytes!("../static/logo.png").as_ref().into())
-			.unwrap_or_default(),
-	)
-}
-
-// Required for iOS App Icons
-async fn iphone_logo() -> Result<Response<Body>, String> {
-	Ok(
-		Response::builder()
-			.status(200)
-			.header("content-type", "image/png")
-			.body(include_bytes!("../static/apple-touch-icon.png").as_ref().into())
-			.unwrap_or_default(),
-	)
-}
-
-async fn favicon() -> Result<Response<Body>, String> {
-	Ok(
-		Response::builder()
-			.status(200)
-			.header("content-type", "image/vnd.microsoft.icon")
-			.header("Cache-Control", "public, max-age=1209600, s-maxage=86400")
-			.body(include_bytes!("../static/favicon.ico").as_ref().into())
-			.unwrap_or_default(),
-	)
-}
-
-async fn font() -> Result<Response<Body>, String> {
-	Ok(
-		Response::builder()
-			.status(200)
-			.header("content-type", "font/woff2")
-			.header("Cache-Control", "public, max-age=1209600, s-maxage=86400")
-			.body(include_bytes!("../static/Inter.var.woff2").as_ref().into())
-			.unwrap_or_default(),
-	)
-}
-
 async fn resource(body: &str, content_type: &str, cache: bool) -> Result<Response<Body>, String> {
 	let mut res = Response::builder()
 		.status(200)
