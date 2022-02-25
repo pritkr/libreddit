@@ -2,9 +2,9 @@
 name = "libreddit"
 description = " Alternative private front-end to Reddit"
 license = "AGPL-3.0"
-repository = "https://github.com/spikecodes/libreddit"
+repository = "https://github.com/pritkr/libreddit"
 version = "0.21.7"
-authors = ["spikecodes <19519553+spikecodes@users.noreply.github.com>"]
+authors = ["spikecodes <pritkr@users.noreply.github.com>"]
 edition = "2021"
 
 [dependencies]
