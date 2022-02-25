@@ -115,11 +115,6 @@ async fn main() {
 	app
 		.at("/robots.txt")
 		.get(|_| resource("User-agent: *\nDisallow: /u/\nDisallow: /user/", "text/plain", true).boxed());
-	app.at("/favicon.ico").get(|_| favicon().boxed());
-	app.at("/logo.png").get(|_| pwa_logo().boxed());
-	app.at("/Inter.var.woff2").get(|_| font().boxed());
-	app.at("/touch-icon-iphone.png").get(|_| iphone_logo().boxed());
-	app.at("/apple-touch-icon.png").get(|_| iphone_logo().boxed());
 	app
 		.at("/playHLSVideo.js")
 		.get(|_| resource(include_str!("../static/playHLSVideo.js"), "text/javascript", false).boxed());
